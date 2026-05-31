@@ -1,0 +1,78 @@
+.scene {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  position: relative;
+  background-color: #1a2030;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0) 35%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hud {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  z-index: 4;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 2px;
+}
+
+.prosBanner {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  z-index: 4;
+  max-width: min(320px, 40vw);
+  padding: 8px 14px;
+  background: rgba(60, 0, 60, 0.75);
+  border: 2px solid #cc88cc;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.prosLabel {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffccff;
+  margin-bottom: 2px;
+  letter-spacing: 0.05em;
+}
+
+.witnessTag {
+  position: absolute;
+  bottom: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  padding: 4px 20px;
+  background: rgba(0, 0, 80, 0.7);
+  border: 2px solid #fff;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.portraitLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}

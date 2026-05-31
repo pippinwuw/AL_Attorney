@@ -1,0 +1,25 @@
+.tabs {
+  display: flex;
+  gap: 4px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+}
+
+.tab {
+  padding: 6px 14px;
+  background: var(--aa-btn-bg);
+  border: 2px solid #888;
+  color: #fff;
+  font-size: 14px;
+}
+
+.tabActive {
+  background: var(--aa-nameplate);
+  border-color: #fff;
+}
+
+.tabLocked {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

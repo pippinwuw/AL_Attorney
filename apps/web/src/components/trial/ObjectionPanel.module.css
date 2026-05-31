@@ -1,0 +1,78 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.panel {
+  background: #1a1040;
+  border: 3px solid var(--aa-dialog-border);
+  padding: 20px;
+  width: min(420px, 92vw);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.header {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff4444;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.line {
+  font-size: 13px;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 4px;
+  opacity: 0.8;
+}
+
+.select,
+.textarea {
+  width: 100%;
+  background: #0a0a20;
+  border: 2px solid #666;
+  color: #fff;
+  padding: 8px;
+  font-size: 13px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.cancelBtn,
+.submitBtn {
+  padding: 8px 16px;
+  border: 2px solid #fff;
+  font-size: 13px;
+}
+
+.cancelBtn {
+  background: #333;
+  color: #fff;
+}
+
+.submitBtn {
+  background: var(--aa-nameplate);
+  color: #fff;
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+}

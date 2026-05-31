@@ -1,0 +1,25 @@
+.healthBar {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.label {
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+.heart {
+  width: 20px;
+  height: 20px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.heartFull {
+  color: var(--aa-health);
+}
+
+.heartEmpty {
+  color: var(--aa-health-empty);
+}

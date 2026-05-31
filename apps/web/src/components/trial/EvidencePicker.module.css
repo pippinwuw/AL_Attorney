@@ -1,0 +1,51 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 150;
+}
+
+.panel {
+  background: var(--aa-dialog-bg);
+  border: 4px solid #fff;
+  padding: 20px;
+  max-width: 500px;
+  width: 90%;
+}
+
+.title {
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.item {
+  background: var(--aa-btn-bg);
+  border: 2px solid #fff;
+  padding: 12px;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+
+.item:hover {
+  background: var(--aa-btn-hover);
+}
+
+.cancel {
+  margin-top: 12px;
+  width: 100%;
+  background: #444;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 8px;
+}

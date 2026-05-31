@@ -1,0 +1,43 @@
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: #000060;
+  border-bottom: 3px solid var(--aa-dialog-border);
+  flex-shrink: 0;
+}
+
+.phaseLabel {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.roleBadge {
+  font-size: 12px;
+  padding: 4px 8px;
+  background: var(--aa-nameplate);
+  border: 2px solid #fff;
+}
+
+.iconBtn {
+  background: var(--aa-btn-bg);
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.iconBtn:hover {
+  background: var(--aa-btn-hover);
+}
+
+.iconBtnActive {
+  background: var(--aa-nameplate);
+}

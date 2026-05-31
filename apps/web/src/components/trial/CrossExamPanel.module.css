@@ -1,0 +1,39 @@
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  background: var(--aa-btn-bg);
+  border: 3px solid #fff;
+  color: #fff;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: var(--aa-panel-shadow);
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--aa-btn-hover);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.placeholder {
+  padding: 10px 16px;
+  background: rgba(255, 0, 0, 0.2);
+  border: 2px dashed #ff6666;
+  color: #ffaaaa;
+  font-size: 14px;
+}

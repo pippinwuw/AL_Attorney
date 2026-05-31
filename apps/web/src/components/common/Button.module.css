@@ -1,0 +1,23 @@
+.aaButton {
+  background: var(--aa-btn-bg);
+  color: var(--aa-dialog-text);
+  border: 3px solid var(--aa-dialog-border);
+  box-shadow: var(--aa-panel-shadow);
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  transition: background var(--aa-animation-fast);
+}
+
+.aaButton:hover:not(:disabled) {
+  background: var(--aa-btn-hover);
+}
+
+.aaButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.aaButtonActive {
+  background: var(--aa-nameplate);
+}

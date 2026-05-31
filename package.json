@@ -1,0 +1,15 @@
+{
+  "name": "ace-attorney",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter @ace-attorney/web dev",
+    "dev:server": "pnpm --filter @ace-attorney/server dev",
+    "dev:all": "pnpm -r --parallel --filter @ace-attorney/web --filter @ace-attorney/server dev",
+    "build": "pnpm --filter @ace-attorney/shared build && pnpm --filter @ace-attorney/context-engine build && pnpm --filter @ace-attorney/server build && pnpm --filter @ace-attorney/web build",
+    "preview": "pnpm --filter @ace-attorney/web preview",
+    "test": "pnpm --filter @ace-attorney/context-engine test"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}

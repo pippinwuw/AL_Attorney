@@ -1,0 +1,77 @@
+.portrait {
+  position: absolute;
+  bottom: 0;
+  width: 280px;
+  height: 360px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.portraitTrial {
+  width: auto;
+  height: 72%;
+  max-height: 420px;
+}
+
+.left {
+  left: 5%;
+}
+
+.right {
+  right: 5%;
+}
+
+.trialLeft {
+  left: 0;
+  height: 68%;
+}
+
+.trialCenter {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  height: 78%;
+  z-index: 3;
+}
+
+.trialRight {
+  right: 0;
+  height: 68%;
+}
+
+.placeholder {
+  width: 200px;
+  height: 320px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.portraitTrial .placeholder {
+  width: 160px;
+  height: 100%;
+  min-height: 240px;
+}
+
+.image {
+  max-height: 100%;
+  max-width: min(32vw, 320px);
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.55));
+}
+
+.label {
+  padding: 8px;
+  opacity: 0.7;
+}

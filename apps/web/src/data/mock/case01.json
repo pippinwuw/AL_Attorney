@@ -1,0 +1,290 @@
+{
+  "id": "case01",
+  "title": "逆转的电梯",
+  "prologue": {
+    "startId": "p1",
+    "dialogs": {
+      "p1": {
+        "id": "p1",
+        "speaker": "法官",
+        "text": "接下来审理的是「逆转的电梯」一案。被告被指控在案发当晚出现在犯罪现场。",
+        "portrait": "judge",
+        "background": "court",
+        "nextId": "p2"
+      },
+      "p2": {
+        "id": "p2",
+        "speaker": "成步堂龙一",
+        "text": "我是辩护律师成步堂龙一。我会证明我的委托人是无罪的！",
+        "portrait": "naruhodo",
+        "nextId": "p3"
+      },
+      "p3": {
+        "id": "p3",
+        "speaker": "检察官",
+        "text": "哼，证据确凿。证人已经准备好了，你毫无胜算。",
+        "portrait": "prosecutor",
+        "nextId": "p4"
+      },
+      "p4": {
+        "id": "p4",
+        "speaker": "成步堂龙一",
+        "text": "在开庭之前，我需要去案发现场调查一下。",
+        "portrait": "naruhodo",
+        "nextId": "p5"
+      },
+      "p5": {
+        "id": "p5",
+        "speaker": "成步堂龙一",
+        "text": "真宵，我们走吧。",
+        "portrait": "naruhodo",
+        "action": "goto_investigation"
+      }
+    }
+  },
+  "investigation": {
+    "scenes": [
+      { "id": "crime_scene", "name": "案发地", "background": "#2a1a3a", "unlocked": true },
+      { "id": "witness_home", "name": "证人住所", "background": "#1a2a3a", "unlocked": true },
+      { "id": "office", "name": "事务所", "background": "#1a1a2e", "unlocked": true }
+    ],
+    "hotspots": [
+      {
+        "id": "hs_elevator",
+        "sceneId": "crime_scene",
+        "x": 30,
+        "y": 20,
+        "w": 25,
+        "h": 40,
+        "type": "area",
+        "label": "电梯",
+        "dialogId": "inv_elevator",
+        "once": true
+      },
+      {
+        "id": "hs_knife",
+        "sceneId": "crime_scene",
+        "x": 60,
+        "y": 55,
+        "w": 12,
+        "h": 15,
+        "type": "item",
+        "label": "凶器",
+        "evidenceId": "ev_knife",
+        "dialogId": "inv_knife",
+        "once": true
+      },
+      {
+        "id": "hs_witness",
+        "sceneId": "witness_home",
+        "x": 40,
+        "y": 30,
+        "w": 20,
+        "h": 35,
+        "type": "npc",
+        "label": "证人",
+        "dialogId": "inv_witness",
+        "once": true
+      },
+      {
+        "id": "hs_photo",
+        "sceneId": "office",
+        "x": 15,
+        "y": 40,
+        "w": 15,
+        "h": 20,
+        "type": "item",
+        "label": "现场照片",
+        "evidenceId": "ev_photo",
+        "dialogId": "inv_photo",
+        "once": true
+      }
+    ],
+    "dialogs": {
+      "inv_elevator": {
+        "id": "inv_elevator",
+        "speaker": "成步堂龙一",
+        "text": "电梯在案发时停在三楼……但证人声称当时在一楼。",
+        "portrait": "naruhodo"
+      },
+      "inv_knife": {
+        "id": "inv_knife",
+        "speaker": "成步堂龙一",
+        "text": "这把刀是凶器。刀柄上有不属于被告的指纹。",
+        "portrait": "naruhodo"
+      },
+      "inv_witness": {
+        "id": "inv_witness",
+        "speaker": "证人",
+        "text": "我……我什么都不知道！我只是碰巧路过而已！",
+        "portrait": "witness"
+      },
+      "inv_photo": {
+        "id": "inv_photo",
+        "speaker": "成步堂龙一",
+        "text": "照片显示案发时电梯指示灯亮着三楼。这是关键证据！",
+        "portrait": "naruhodo"
+      }
+    },
+    "requiredEvidence": ["ev_knife", "ev_photo"]
+  },
+  "trial": {
+    "opening": [
+      {
+        "id": "t_open1",
+        "speaker": "检察官",
+        "text": "检方传唤第一证人：现场目击者。",
+        "portrait": "prosecutor"
+      },
+      {
+        "id": "t_open2",
+        "speaker": "法官",
+        "text": "证人，请陈述你所看到的、与被告有关的情况。",
+        "portrait": "judge"
+      }
+    ],
+    "prosecutionEvidence": ["ev_knife"],
+    "prosecutionScript": [
+      {
+        "id": "t_pros1",
+        "speaker": "检察官",
+        "text": "检方向法庭提交以下证物：凶器（菜刀）。",
+        "portrait": "prosecutor"
+      }
+    ],
+    "errorTemplates": {
+      "wrong_line": "真宵：这段话似乎没什么漏洞……再仔细看看别的证词？",
+      "wrong_evidence": "真宵：这个证物好像对不上呢！再想想现场照片？"
+    },
+    "witnesses": [
+      {
+        "id": "w1",
+        "name": "目击者",
+        "portrait": "witness",
+        "testimony": [
+          {
+            "id": "t1",
+            "text": "我当时在一楼大厅，绝对没有看到被告。",
+            "objectionable": true,
+            "acceptedEvidenceIds": ["ev_photo"],
+            "reconstructionSteps": [
+              {
+                "id": "r1_t1",
+                "prompt": "案发时电梯实际停在几楼？",
+                "keywords": ["三", "3", "三楼"],
+                "hint": "想想现场照片上的电梯指示灯"
+              },
+              {
+                "id": "r2_t1",
+                "prompt": "说明证人为何无法在一楼确认被告行踪？",
+                "keywords": ["照片", "三楼", "不可能", "看清", "不在"],
+                "hint": "照片与证人位置存在矛盾"
+              }
+            ]
+          },
+          {
+            "id": "t2",
+            "text": "电梯当时停在一楼，我可以肯定。",
+            "objectionable": true,
+            "acceptedEvidenceIds": ["ev_photo"],
+            "reconstructionSteps": [
+              {
+                "id": "r1_t2",
+                "prompt": "根据照片，电梯指示灯显示在哪一层？",
+                "keywords": ["三", "3", "三楼"],
+                "hint": "照片是关键"
+              },
+              {
+                "id": "r2_t2",
+                "prompt": "还原案发时电梯的真实状态，并指出与证人证词的矛盾。",
+                "keywords": ["停", "三楼", "矛盾", "一楼", "不对"],
+                "hint": "证人声称一楼，照片显示三楼"
+              }
+            ]
+          },
+          {
+            "id": "t3",
+            "text": "事情发生得很突然，我只听到了尖叫声。",
+            "pressResponse": "尖叫声是从哪个方向传来的？"
+          }
+        ]
+      }
+    ],
+    "closing": [
+      {
+        "id": "t_close1",
+        "speaker": "成步堂龙一",
+        "text": "证人的证词与现场照片矛盾。电梯明明停在三楼！",
+        "portrait": "naruhodo"
+      },
+      {
+        "id": "t_close2",
+        "speaker": "法官",
+        "text": "本庭认为，检方指控存在合理怀疑。",
+        "portrait": "judge",
+        "action": "goto_verdict"
+      }
+    ],
+    "choices": []
+  },
+  "verdict": {
+    "title": "无罪！",
+    "text": "基于现有证据，被告被判无罪。成步堂再次捍卫了正义！"
+  },
+  "mayaResponses": {
+    "free_chat": [
+      "嗯……我觉得这个案件还有疑点哦！",
+      "成步堂，别忘了仔细检查每个地方！",
+      "灵媒师的可不是白给的，我感应到了一些奇怪的气息……"
+    ],
+    "analyze_evidence": [
+      "这把刀上的指纹很关键！不是被告的话，就是真凶留下的。",
+      "照片上的电梯指示灯……和证人的证词对不上呢！",
+      "这条证物可能就是我们突破的关键！"
+    ],
+    "reconstruct_timeline": [
+      "案发时：凶手在三楼行凶 → 电梯停在三楼 → 证人却声称在一楼看到电梯停在一楼……矛盾！",
+      "让我们梳理一下：尖叫 → 电梯指示灯亮三楼 → 证人不可能在一楼看清电梯状态。"
+    ],
+    "trial_hint": [
+      "成步堂，仔细看看证人的证词和证物记录……",
+      "照片！想想我们在事务所找到的那张照片！",
+      "提示：证人关于电梯位置的说法有问题哦～"
+    ],
+    "discuss_testimony": [
+      "证人说电梯停在一楼……但照片显示的是三楼呢。",
+      "这里可以用「现场照片」来指出矛盾！"
+    ],
+    "edit_dossier": [
+      "好的成步堂！我来更新卷宗～",
+      "嗯，让我把这条记进案情梳理里！",
+      "卷宗整理好了，你看看有没有遗漏？"
+    ]
+  },
+  "evidence": {
+    "ev_knife": {
+      "id": "ev_knife",
+      "name": "凶器（菜刀）",
+      "description": "案发现场发现的菜刀。刀柄上有未知指纹，不属于被告。"
+    },
+    "ev_photo": {
+      "id": "ev_photo",
+      "name": "现场照片",
+      "description": "事务所存档的现场照片。显示案发时电梯指示灯停在三楼。"
+    }
+  },
+  "trialDialogs": {
+    "t1_success": {
+      "id": "t1_success",
+      "speaker": "成步堂龙一",
+      "text": "异议！照片显示你当时根本不可能在一楼看清被告！",
+      "portrait": "naruhodo"
+    },
+    "t2_success": {
+      "id": "t2_success",
+      "speaker": "成步堂龙一",
+      "text": "异议！这张照片证明电梯停在三楼，而非一楼！",
+      "portrait": "naruhodo"
+    }
+  }
+}

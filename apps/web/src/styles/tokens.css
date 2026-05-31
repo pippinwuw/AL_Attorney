@@ -1,0 +1,74 @@
+:root {
+  --aa-dialog-bg: #0000a0;
+  --aa-dialog-border: #ffffff;
+  --aa-dialog-text: #ffffff;
+  --aa-nameplate: #ff0000;
+  --aa-court-bg: #404040;
+  --aa-highlight: #ffff00;
+  --aa-health: #00ff00;
+  --aa-health-empty: #444444;
+  --aa-panel-shadow: 4px 4px 0 #000;
+  --aa-font-size-dialog: 18px;
+  --aa-line-height: 1.6;
+  --aa-animation-fast: 0.15s;
+  --aa-animation-normal: 0.3s;
+  --aa-animation-spring: 0.5s;
+  --aa-bg-dark: #0a0a1a;
+  --aa-accent: #c0c0ff;
+  --aa-btn-bg: #000080;
+  --aa-btn-hover: #0000c0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Noto Sans SC', sans-serif;
+  background: var(--aa-bg-dark);
+  color: var(--aa-dialog-text);
+  user-select: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.pixel-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes pulse-hotspot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 2px rgba(255, 255, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 12px 4px rgba(255, 255, 0, 0.8);
+  }
+}

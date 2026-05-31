@@ -1,0 +1,115 @@
+.box {
+  background: linear-gradient(180deg, #000090 0%, #000060 100%);
+  border-top: 4px solid #fff;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  max-height: 280px;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.35);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.headerTitle {
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+}
+
+.headerSub {
+  font-size: 11px;
+  opacity: 0.55;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lines {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 12px;
+  min-height: 0;
+}
+
+.line {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  margin-bottom: 4px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #ddd;
+  background: transparent;
+  border: none;
+  border-left: 4px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.line:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.lineActive {
+  color: var(--aa-highlight);
+  border-left-color: var(--aa-highlight);
+  background: rgba(255, 255, 0, 0.08);
+  font-weight: 700;
+  animation: testimonyPulse 2.5s ease-in-out infinite;
+}
+
+.lineDone {
+  opacity: 0.45;
+}
+
+.lineMarker {
+  flex-shrink: 0;
+  width: 1.2em;
+  color: var(--aa-highlight);
+}
+
+.lineText {
+  flex: 1;
+}
+
+.contradictionHint {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #cc0000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 700;
+  animation: blink 1.2s infinite;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  padding: 10px 16px 14px;
+  justify-content: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+@keyframes testimonyPulse {
+  0%,
+  100% {
+    background: rgba(255, 255, 0, 0.08);
+  }
+  50% {
+    background: rgba(255, 255, 0, 0.14);
+  }
+}

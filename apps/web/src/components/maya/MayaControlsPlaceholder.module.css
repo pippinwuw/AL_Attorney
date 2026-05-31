@@ -1,0 +1,8 @@
+.bar {
+  padding: 8px 16px;
+  background: rgba(100, 0, 100, 0.2);
+  border-top: 2px dashed #996699;
+  font-size: 13px;
+  color: #cc99cc;
+  text-align: center;
+}

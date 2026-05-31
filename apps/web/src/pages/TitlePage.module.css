@@ -1,0 +1,71 @@
+.titlePage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #0a0a2e 0%, #1a0a3a 50%, #0a0a2e 100%);
+  gap: 32px;
+}
+
+.logo {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  text-align: center;
+  line-height: 2;
+  color: var(--aa-accent);
+  text-shadow: 4px 4px 0 #000;
+}
+
+.roleSelect {
+  display: flex;
+  gap: 24px;
+}
+
+.roleCard {
+  width: 180px;
+  padding: 20px;
+  background: var(--aa-btn-bg);
+  border: 4px solid #666;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: var(--aa-panel-shadow);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.roleCard:hover {
+  transform: translateY(-4px);
+}
+
+.roleCardActive {
+  border-color: var(--aa-highlight);
+  background: #0000a0;
+}
+
+.roleName {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.roleDesc {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.menuBtn {
+  min-width: 200px;
+}
+
+.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

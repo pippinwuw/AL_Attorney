@@ -1,0 +1,231 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.panel {
+  width: min(720px, 92vw);
+  height: 100%;
+  background: #120830;
+  border-left: 4px solid var(--aa-dialog-border);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.4);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #000060;
+  border-bottom: 3px solid var(--aa-dialog-border);
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.closeBtn {
+  background: var(--aa-btn-bg);
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 4px 12px;
+  font-size: 14px;
+}
+
+.closeBtn:hover {
+  background: var(--aa-btn-hover);
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #444;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  background: #1a1040;
+  border: none;
+  border-right: 1px solid #444;
+  color: #ccc;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.tab:last-child {
+  border-right: none;
+}
+
+.tabActive {
+  background: #440066;
+  color: #fff;
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.evidenceBody {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.dossierBody {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.chatPane {
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid #444;
+  min-height: 0;
+}
+
+.chatHeader {
+  padding: 8px 12px;
+  background: #660066;
+  font-weight: 700;
+  font-size: 13px;
+  border-bottom: 1px solid #fff;
+}
+
+.chatMessages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 0;
+}
+
+.msgUser {
+  align-self: flex-end;
+  background: var(--aa-btn-bg);
+  padding: 8px 10px;
+  border-radius: 8px 8px 0 8px;
+  max-width: 90%;
+  font-size: 13px;
+}
+
+.msgMaya {
+  align-self: flex-start;
+  background: #440044;
+  padding: 8px 10px;
+  border-radius: 8px 8px 8px 0;
+  max-width: 90%;
+  font-size: 13px;
+}
+
+.chatInputRow {
+  display: flex;
+  gap: 4px;
+  padding: 8px;
+  border-top: 2px solid #444;
+}
+
+.chatInput {
+  flex: 1;
+  background: #0a0a20;
+  border: 2px solid #666;
+  color: #fff;
+  padding: 8px;
+  font-size: 13px;
+}
+
+.sendBtn {
+  background: var(--aa-nameplate);
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 8px 12px;
+}
+
+.sendBtn:disabled {
+  opacity: 0.5;
+}
+
+.dossierPane {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.dossierHeader {
+  padding: 8px 12px;
+  background: #004466;
+  font-weight: 700;
+  font-size: 13px;
+  border-bottom: 1px solid #fff;
+}
+
+.dossierScroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.dossierTitle {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #ffdd88;
+}
+
+.section {
+  margin-bottom: 14px;
+}
+
+.sectionHeading {
+  font-size: 13px;
+  font-weight: 700;
+  color: #88ccff;
+  margin-bottom: 4px;
+}
+
+.sectionBody {
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  color: #eee;
+}
+
+.emptyHint {
+  padding: 24px;
+  text-align: center;
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+.loading {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.7;
+  padding: 4px;
+}
+
+@media (max-width: 640px) {
+  .dossierBody {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .chatPane {
+    border-right: none;
+    border-bottom: 2px solid #444;
+  }
+}
